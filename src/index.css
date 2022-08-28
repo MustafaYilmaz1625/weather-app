@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* .imgs{
+ 
+  background:center/cover url("https://artigergitavan.com/uploads/images/foto-galeri/gokyuzu/10.jpg") no-repeat ;
+  
+} */
+.images{
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://artigergitavan.com/uploads/images/foto-galeri/gokyuzu/10.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.images::-webkit-scrollbar{
+  display: none;
+}
+
+.frame{
+background-color: rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
