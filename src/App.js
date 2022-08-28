@@ -12,19 +12,20 @@ function App() {
   useEffect(() => {
     dispatch(fetchWeatherData(localStorage.getItem("inputValue")));
   }, [dispatch]);
+
   const state = useSelector((state) => state);
-  const { weather, loading, error } = state;
+  const { weather, error } = state;
+console.log(state)
 
   return (
     <div className="container-fluid vh-100 images" >
-      <div className="row row-col-1">
-
-        <h2 className="text-center p-5">Weather Forecast</h2>
+      <div className="row container pe-4 pe-sm-0 ms-1 ms-sm-5 ">
+        <h2 className="text-center  p-5">Weather Forecast</h2>
         <div className="container-fluid container-md  ">
           <div className="row justify-content-center ">
             <div className="col col-sm-6 col-md-5 col-lg-4">
               <div className="input-group  mb-5">
-                <input type="text" className="form-control " placeholder="Search City" aria-label="Recipient's username" aria-describedby="button-addon2"
+                <input type="text" className="form-control " placeholder="Search City" aria-label="input" 
                   value={city}
                   onChange={(e) => {
                     setCity(e.target.value);
@@ -36,35 +37,38 @@ function App() {
 
             </div>
           </div>
-
           <div className="row justify-content-center">
             <div className="col col-sm-6 col-md-5 col-lg-4">
-              {loading ? (
-                <h1 className="text-center  text-light">Loading please wait..</h1>
+              {city.length === 0 ? (
+                <div className="container-fluid container-md p-3 rounded frame">
+                <h1 className="text-center text-danger">PLEASE ENTER CITY!</h1>
+                </div>
               ) : error ? (
-                <h1 className="text-center text-danger">{error?.message}</h1>
+                 <div className="container-fluid  container-md p-3  rounded frame">
+                <h1 className="text-center text-danger">{error?.message.toUpperCase()}</h1>
+                </div>
               ) : (
                 <div className="container-fluid  container-md   rounded frame">
 
                   <div className="row m-3 ">
                     <div className="col-6 mt-4"><img className="img-fluid    rounded-circle " width={100} height={100} src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`} alt="/" /></div>
                     <div className="col-6 text-center pt-3">
-                      <div className="row p-2  "><h1 className="fs-1 text-center ">clean</h1></div>
-                      <div className="row"> <h1 className="fs-1">
-                        {Math.ceil(Number(weather?.main.temp))}
+                      <div className="row p-2  "><h1 className="fs-1 text-center text-white">{weather?.weather[0].main}</h1></div>
+                      <div className="row text-white"> <h1 className="fs-1">
+                        {((weather?.main.temp)-273.15).toFixed(2)}
                         <span className="text-warning ">°C</span>
                       </h1></div>
                     </div>
                   </div>
 
-                  <div className="row ">
+                  <div className="row text-white">
                     <h3 className="text-st p-3">{weather?.name}, {weather?.sys?.country}</h3>
                     <p className="text-center">
                       The weather condition in {weather?.name}, {weather?.sys?.country}{" "}
                       is described as : {weather?.weather[0].description} with a
                       temperature of {weather?.weather[0].description} with a
-                      temperature of {Math.ceil(Number(weather?.main.temp))} °C and a
-                      humidity of {weather?.main?.humidity} %
+                      temperature of {((weather?.main.temp)-273.15).toFixed(2)} °C and a
+                      humidity of {weather?.main?.humidity} %.
                     </p>
 
                   </div>
@@ -73,7 +77,6 @@ function App() {
               )}
             </div>
           </div>
-
         </div>
       </div>
     </div >
@@ -82,63 +85,5 @@ function App() {
 
 export default App;
 
-// return (
-//   <div class="container-fluid vh-100 bg-light  ">
-//     <section className="container  text-center">
-//       <h2 className="text-center p-5">Weather App</h2>
-//       <div class="container input-group w-50 pb-5">
-// {/* <input
-//   type="text"
-//   className="form-control "
-//   placeholder="Search City" */}
 
 
-
-// />
-//         <button
-//           className="btn btn-outline-secondary"
-//           onClick={() => dispatch(fetchWeatherData(city))}
-//           type="button"
-//           id="button-addon2"
-//         >
-//           Search
-//         </button>
-//       </div>
-
-//       {loading ? (
-//         <h1 className="text-center  text-light">Loading please wait..</h1>
-//       ) : error ? (
-//         <h1 className="text-center text-danger">{error?.message}</h1>
-//       ) : (
-//         <div className="container  border w-50 border-secondary  rounded-2 border-1">
-//           <div className="d-flex bg-light justify-content-start item-center">
-//             <span className=" item-center justify-content-center  border border-2 rounded-circle w-25 h-25 ">
-//               <img
-//                 className="w-56"
-//                 src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
-// src = { "https://cdn.vectorstock.com/i/1000x1000/65/84/give-an-instruction-vector-3056584.webp"}
-//                 alt="/"
-//               />
-//             </span>
-//             <h1 className="fs-1 p-lg-4">{weather?.weather[0].main}</h1>
-//           </div>
-//           <h1>
-//             {Math.ceil(Number(weather?.main.temp))}
-//             <span className="text-500 ">°C</span>
-//           </h1>
-//           <h3 className="fs-6 float-start">
-//             {weather?.name}, {weather?.sys?.country}
-//           </h3>
-//           <br />
-//           <p className=" float-start pb-5">
-//             The weather condition in {weather?.name}, {weather?.sys?.country}{" "}
-//             is described as : {weather?.weather[0].description} with a
-//             temperature of {weather?.weather[0].description} with a
-//             temperature of {Math.ceil(Number(weather?.main.temp))} °C and a
-//             humidity of {weather?.main?.humidity} %
-//           </p>
-//         </div>
-//       )}
-//     </section>
-//   </div>
-// );
