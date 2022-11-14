@@ -1,10 +1,9 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
 
 import { useEffect, useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWeatherData } from "./redux/slices/weatherSlices";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,8 +36,9 @@ console.log(state)
 
             </div>
           </div>
-          <div className="row justify-content-center">
+          <div  className="row justify-content-center">
             <div className="col col-sm-6 col-md-5 col-lg-4">
+            
               {city.length === 0 ? (
                 <div className="container-fluid container-md p-3 rounded frame">
                 <h1 className="text-center text-danger">PLEASE ENTER CITY!</h1>
