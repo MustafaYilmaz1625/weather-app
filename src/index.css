@@ -2,34 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .App {
-    @apply bg-red-900 font-extrabold text-center
+@layer components{
+  .App{
+    @apply bg-red-600 flex font-bold justify-center items-center
   }
-
-  ul>li {
-    @apply mx-3
-  }
-
-  .header {
-    @apply flex flex-col justify-center items-center my-3
-  }
-
-  .btn {
-    @apply bg-black text-white border-none flex items-center px-6 py-3 my-2 rounded-2xl
-  }
-}
-ul>li,
-.navlink {
-  font-size: 1.2rem;
-  letter-spacing: .3rem;
-  padding: .7rem .5rem;
-  transition: all .5s
-}
-
-ul>li:hover,
-.navlink:hover {
-  color: #ffc107 !important;
-  -webkit-transform: scale(120%);
-  transform: scale(120%);
 }
