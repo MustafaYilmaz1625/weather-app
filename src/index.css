@@ -18,18 +18,11 @@
   .btn {
     @apply bg-black text-white border-none flex items-center px-6 py-3 my-2 rounded-2xl
   }
-}
-ul>li,
-.navlink {
-  font-size: 1.2rem;
-  letter-spacing: .3rem;
-  padding: .7rem .5rem;
-  transition: all .5s
-}
 
-ul>li:hover,
-.navlink:hover {
-  color: #ffc107 !important;
-  -webkit-transform: scale(120%);
-  transform: scale(120%);
+  ul>li{
+    @apply mx-3 text-xl p-3 tracking-widest duration-500
+  }
+  .navlink {
+    @apply text-xl p-3 tracking-widest duration-500
+  }
 }
