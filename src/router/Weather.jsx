@@ -17,6 +17,7 @@ function Weather() {
           <Route path="listOfCities" element={<ListOfCities />} />
         </Routes>
         <Footer />
+        
       </BrowserRouter>
     </div>
   );
