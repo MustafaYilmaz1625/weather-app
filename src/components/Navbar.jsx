@@ -16,6 +16,9 @@ function Navbar() {
         <nav className="hidden lg:block">
           <ul className="flex flex-row">
             <li className="hover:scale-125 hover:text-orange-500">
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li className="hover:scale-125 hover:text-orange-500">
               <NavLink to="turkeyMap">Turkey Map</NavLink>
             </li>
             <li className="hover:scale-125 hover:text-orange-500">
