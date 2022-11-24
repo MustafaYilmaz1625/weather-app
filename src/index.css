@@ -4,25 +4,33 @@
 
 @layer components {
   .App {
-    @apply bg-red-900 font-extrabold text-center
+    @apply bg-red-900 font-extrabold text-center;
   }
 
-  ul>li {
-    @apply mx-3
+  ul > li {
+    @apply mx-3;
   }
 
   .header {
-    @apply flex flex-col justify-center items-center my-3
+    @apply flex flex-col justify-center items-center my-3;
   }
 
   .btn {
-    @apply bg-black text-white border-none flex items-center px-6 py-3 my-2 rounded-2xl
+    @apply bg-black text-white border-none flex items-center px-6 py-3 my-2 rounded-2xl;
   }
 
-  ul>li{
-    @apply mx-3 text-xl p-3 tracking-widest duration-500
+  ul > li {
+    @apply mx-3 text-xl p-3 tracking-widest duration-500;
   }
   .navlink {
-    @apply text-xl p-3 tracking-widest duration-500
+    @apply text-xl p-3 tracking-widest duration-500;
   }
+}
+
+.box {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
