@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import TurkeyMap from "turkey-map-react";
 
-const TurkeyMap = () => {
+const TurkeyMapp = () => {
   return (
-    <div>TurkeyMap</div>
-  )
-}
+    <div>
+      <TurkeyMap
+        customStyle={{ idleColor: "#dc3522", hoverColor: "#ffff" }}
+        onClick={({ plateNumber, name }) =>
+          console.log(plateNumber + " - " + name + " is just clicked!")
+        }
+        hoverable={true}
+        onHover={({ plateNumber, name }) =>
+          console.log("Cursor is over on " + plateNumber + " - " + name + "!")
+        }
+      />
+    </div>
+  );
+};
 
-export default TurkeyMap
+export default TurkeyMapp;
