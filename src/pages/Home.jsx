@@ -3,12 +3,12 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 import Header from "../components/Header";
 
-function Home() {
+function Home({ location, weather }) {
   return (
     <div>
       <Header />
       <Button />
-      <Card />
+      <Card location={location} weather={weather} />
     </div>
   );
 }
