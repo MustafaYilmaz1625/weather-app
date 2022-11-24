@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Home from "../pages/Home";
 import ListOfCities from "../pages/ListOfCities";
-import TurkeyMap from "../pages/TurkeyMap";
+import TurkeyMapp from "../pages/TurkeyMap";
 import axios from "axios";
 
 function Weather() {
@@ -34,7 +34,7 @@ function Weather() {
           <Route
             path="turkeyMap"
             element={
-              <TurkeyMap weather={weather} city={city} setCity={setCity} />
+              <TurkeyMapp weather={weather} city={city} setCity={setCity} />
             }
           />
           <Route
